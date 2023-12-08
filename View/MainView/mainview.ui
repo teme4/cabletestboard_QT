@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainView</class>
+ <widget class="QMainWindow" name="MainView">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1600</width>
+    <height>731</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1280</width>
+    <height>500</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Плата Проверки Кабелей</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#centralwidget
+{
+        background-color: white;
+}
+
+QWidget{
+        font-family: Verdana;
+        font-size: 12px;
+        font-weight: bold;
+}
+
+QGroupBox{
+        border-radius: 5px;
+        padding-top:10px;
+        margin-top:10px;	
+		background-color: white;
+}
+
+QGroupBox::title{
+        color: black;
+        top: -10px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        border: 2px solid white;
+        background-color: white;
+}
+
+QFrame{
+        border-radius: 5px;
+		background-color: white;
+}
+
+QLabel{
+        color: black;
+}
+
+QPushButton::hover{
+        background-color: rgb(0,146,153);
+}
+
+QPushButton::disabled{
+        background-color: rgb(240,240,240);
+}
+
+QPushButton::pressed{
+        background-color: rgb(50, 100, 100);
+}
+
+QLineEdit{
+        border-radius: 5px;
+        padding: 3px;
+        color: rgb(68,68,68);
+        background-color: rgb(240,240,240);
+}
+
+QSpinBox, QDoubleSpinBox{
+        border-radius: 5px;
+        padding: 3px;
+        color: white;
+        background-color: rgb(0,126,132);
+}
+
+QComboBox{
+        border-radius: 5px;
+        padding: 3px;
+        color: rgb(68,68,68);
+        background-color: rgb(240,240,240);
+}
+
+QComboBox::drop-down {
+     border-top-right-radius: 5px;
+     border-bottom-right-radius: 5px;
+     background-color: rgb(0,126,132);
+ }
+
+QDoubleSpinBox::disabled{
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        padding: 3px;
+        color: white;
+        background-color: rgb(240,240,240);
+}
+
+QPushButton{
+        border-radius: 5px;
+        color: white;
+        padding: 6px;
+        background-color: rgb(0,126,132);
+}
+
+#right_group,
+#left_group
+{
+	background-color: rgb(240,240,240);
+}
+
+QTableWidget{
+		border-radius: 0px;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout" stretch="2,5">
+    <item>
+     <widget class="QFrame" name="left_group">
+      <layout class="QVBoxLayout" name="settings" stretch="0,0,0,0">
+       <item>
+        <widget class="QFrame" name="deviceFrame">
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <widget class="QLabel" name="logo">
+            <property name="styleSheet">
+             <string notr="true">#centralwidget
+{
+        background-color: white;
+}
+</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap resource="../../resources.qrc">:/new/prefix1/Images/logo.png</pixmap>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="device_name_label">
+            <property name="text">
+             <string>Наименование устройства</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="device_name">
+            <property name="text">
+             <string>Плата Проверки Кабелей</string>
+            </property>
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="com_groupBox">
+         <property name="title">
+          <string>Настройка COM</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout">
+          <item row="1" column="0">
+           <widget class="QPushButton" name="open_btn">
+            <property name="text">
+             <string>Определить и открыть порт</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QComboBox" name="com_comboBox"/>
+          </item>
+          <item row="1" column="1">
+           <widget class="QPushButton" name="close_btn">
+            <property name="text">
+             <string>Закрыть</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="com_label">
+            <property name="text">
+             <string>COM порт</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QPushButton" name="refresh_btn">
+            <property name="text">
+             <string>Обновить список</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QPushButton" name="clear_btn">
+            <property name="text">
+             <string>Очистить консоль</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QListWidget" name="messages">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="batchSize">
+          <number>104</number>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="legend" stretch="0,0,0,0,0">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="legend_ok">
+           <property name="styleSheet">
+            <string notr="true">border-radius: 0px;</string>
+           </property>
+           <property name="text">
+            <string>ОК - Жила исправна</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="legend_kz">
+           <property name="styleSheet">
+            <string notr="true">background-color: red;
+border-radius: 0px;</string>
+           </property>
+           <property name="text">
+            <string>КЗ - Короткое замыкание</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="legend_ob">
+           <property name="styleSheet">
+            <string notr="true">background-color: green;
+border-radius: 0px;</string>
+           </property>
+           <property name="text">
+            <string>ОБ - Обрыв кабеля</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="legend_nr">
+           <property name="styleSheet">
+            <string notr="true">background-color: yellow;
+border-radius: 0px;</string>
+           </property>
+           <property name="text">
+            <string>НР - Некорректная распиновка</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(20,170,255);
+border-radius: 0px;</string>
+           </property>
+           <property name="text">
+            <string>NC - Не используется</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="right_group">
+      <layout class="QGridLayout" name="cables">
+       <property name="sizeConstraint">
+        <enum>QLayout::SetDefaultConstraint</enum>
+       </property>
+       <property name="spacing">
+        <number>6</number>
+       </property>
+       <item row="5" column="1">
+        <widget class="QTableWidget" name="six_table"/>
+       </item>
+       <item row="2" column="1">
+        <widget class="QTableWidget" name="three_table"/>
+       </item>
+       <item row="9" column="1">
+        <widget class="QTableWidget" name="eleven_table"/>
+       </item>
+       <item row="4" column="0">
+        <widget class="QPushButton" name="five_btn">
+         <property name="text">
+          <string>ПКУ-КМ (Боб)</string>
+         </property>
+        </widget>
+       </item>
+       <item row="12" column="1">
+        <widget class="QTableWidget" name="fifteen_table"/>
+       </item>
+       <item row="15" column="1">
+        <widget class="QTableWidget" name="eighteen_table"/>
+       </item>
+       <item row="8" column="0">
+        <widget class="QPushButton" name="nine_ten_btn">
+         <property name="text">
+          <string>ПКУ - НККиПА</string>
+         </property>
+        </widget>
+       </item>
+       <item row="13" column="1">
+        <widget class="QTableWidget" name="sixteen_table"/>
+       </item>
+       <item row="12" column="0">
+        <widget class="QPushButton" name="fifteen_btn">
+         <property name="text">
+          <string>Internal_External_fridge</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QPushButton" name="three_btn">
+         <property name="text">
+          <string>Плата перекл. 1 - Плата перекл. 2</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0">
+        <widget class="QPushButton" name="eight_btn">
+         <property name="text">
+          <string>ПКУ - НККиПА (UART)</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QTableWidget" name="four_table"/>
+       </item>
+       <item row="11" column="0">
+        <widget class="QPushButton" name="thirteen_btn">
+         <property name="text">
+          <string>ПКУ - НККиПА - АОМ</string>
+         </property>
+        </widget>
+       </item>
+       <item row="14" column="1">
+        <widget class="QTableWidget" name="seventeen_table"/>
+       </item>
+       <item row="7" column="1">
+        <widget class="QTableWidget" name="eight_table"/>
+       </item>
+       <item row="5" column="0">
+        <widget class="QPushButton" name="six_btn">
+         <property name="text">
+          <string>ПКУ - SD/ SC</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QPushButton" name="four_btn">
+         <property name="text">
+          <string>ПКУ-КМ (Алиса)</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="1">
+        <widget class="QTableWidget" name="nine_ten_table"/>
+       </item>
+       <item row="13" column="0">
+        <widget class="QPushButton" name="sixteen_btn">
+         <property name="text">
+          <string>ПКУ-НККиПА-АОМ v4.0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QPushButton" name="two_btn">
+         <property name="text">
+          <string>НККиПА - Плата перекл.</string>
+         </property>
+        </widget>
+       </item>
+       <item row="15" column="0">
+        <widget class="QPushButton" name="eighteen_btn">
+         <property name="text">
+          <string>НКК - ОП</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QPushButton" name="seven_btn">
+         <property name="text">
+          <string>НККиПА - Компенс. дисп.</string>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="0">
+        <widget class="QPushButton" name="twelve_btn">
+         <property name="text">
+          <string>ПКУ - НККиПА - ДОФ (ДОФ)</string>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="1">
+        <widget class="QTableWidget" name="thirteen_table"/>
+       </item>
+       <item row="4" column="1">
+        <widget class="QTableWidget" name="five_table"/>
+       </item>
+       <item row="10" column="1">
+        <widget class="QTableWidget" name="twelve_table"/>
+       </item>
+       <item row="1" column="1">
+        <widget class="QTableWidget" name="two_table"/>
+       </item>
+       <item row="0" column="1">
+        <widget class="QTableWidget" name="one_table"/>
+       </item>
+       <item row="9" column="0">
+        <widget class="QPushButton" name="eleven_btn">
+         <property name="text">
+          <string>ПКУ - НККиПА - ДОФ (НКК)</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="QTableWidget" name="seven_table"/>
+       </item>
+       <item row="0" column="0">
+        <widget class="QPushButton" name="one_btn">
+         <property name="text">
+          <string>НККиПА - МЛИ</string>
+         </property>
+        </widget>
+       </item>
+       <item row="14" column="0">
+        <widget class="QPushButton" name="seventeen_btn">
+         <property name="text">
+          <string>Ethernet</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../../resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>
