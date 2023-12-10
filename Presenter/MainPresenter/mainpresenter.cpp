@@ -23,7 +23,7 @@ void MainPresenter::init(){
     QObject::connect(serialPortSender, &SerialPortSender::dataReceived, this, &MainPresenter::onDataReceived);
 
     //Обновление списка портов при старте программы
-   //refreshCom();
+   refreshCom();
 
 }
 

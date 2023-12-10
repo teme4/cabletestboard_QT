@@ -60,10 +60,16 @@ void MainView::attachPresenter(MainPresenter *presenter){
 /*
  * Обновить список COM портов
  */
-void MainView::refreshCom(QList<QString> ports){
-    ui->com_comboBox->clear();
-    ui->com_comboBox->addItems(ports);
-}
+ QString com_ports[10];
+
+  void MainView::refreshCom(QList<QString> ports){
+
+        for (int i=0;i<ports.count() ; i++)
+        {
+         com_ports[i]=ports.at(i);
+        }
+
+ }
 
 /*
  * Напечатать сообщение в окно сообщений с меткой времени
@@ -198,9 +204,18 @@ void MainView::closeEvent(QCloseEvent *event)
  */
 void MainView::on_open_btn_clicked()
 {
+
+    this->presenter->refreshCom();
+
+      for (int i=0;i<com_ports->count() ; i++) {
+      this->presenter->openCom(com_ports[i]);
+      presenter->execCmd(0x95);
+  }
+
+    /*
       this->presenter->refreshCom();
       ui->com_comboBox->setCurrentIndex(0);
-      this->presenter->openCom(ui->com_comboBox->currentText());
+      this->presenter->openCom(ui->com_comboBox->com_ports.at());
       presenter->execCmd(0x95);
 
       ui->com_comboBox->setCurrentIndex(1);
@@ -209,7 +224,7 @@ void MainView::on_open_btn_clicked()
 
       ui->com_comboBox->setCurrentIndex(2);
       this->presenter->openCom(ui->com_comboBox->currentText());
-      presenter->execCmd(0x95);
+      presenter->execCmd(0x95);*/
 }
 
 
@@ -353,22 +368,3 @@ void MainView::on_clear_btn_clicked()
     ui->messages->clear();
 }
 
-void MainView::on_open_btn_pressed()
-{
-
-}
-
-void MainView::on_refresh_btn_pressed()
-{
-
-}
-
-void MainView::on_com_comboBox_activated(const QString &arg1)
-{
-
-}
-
-void MainView::on_com_comboBox_currentIndexChanged(const QString &arg1)
-{
-
-}

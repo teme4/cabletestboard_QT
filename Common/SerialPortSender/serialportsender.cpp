@@ -74,8 +74,8 @@ void SerialPortSender::setupSerialPort(QString portName){
  */
 QList<QString> SerialPortSender::availablePorts(){
     QList<QString> result;
-    foreach(QSerialPortInfo port, QSerialPortInfo::availablePorts()) {
+       foreach(QSerialPortInfo port, QSerialPortInfo::availablePorts()) {
         if (!port.isBusy()) result.append(port.portName());
-    }
+           }
     return result;
 }
