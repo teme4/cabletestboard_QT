@@ -60,13 +60,14 @@ void MainView::attachPresenter(MainPresenter *presenter){
 /*
  * Обновить список COM портов
  */
- QString com_ports[10];
+ QString com_ports[5];
+extern QList<QString> result;
 
   void MainView::refreshCom(QList<QString> ports){
 
-        for (int i=0;i<ports.count() ; i++)
-        {
-         com_ports[i]=ports.at(i);
+        for (int i=0;i<result.count() ; i++)
+        {         
+         com_ports[i]=result[i];
         }
 
  }
@@ -204,39 +205,18 @@ void MainView::closeEvent(QCloseEvent *event)
  */
 void MainView::on_open_btn_clicked()
 {
-
     this->presenter->refreshCom();
-
-      for (int i=0;i<com_ports->count() ; i++) {
+      for (int i=0;i<(com_ports->count()) ; i++) {    
+     // QString manufacturer = port.manufacturer();
       this->presenter->openCom(com_ports[i]);
       presenter->execCmd(0x95);
   }
-
-    /*
-      this->presenter->refreshCom();
-      ui->com_comboBox->setCurrentIndex(0);
-      this->presenter->openCom(ui->com_comboBox->com_ports.at());
-      presenter->execCmd(0x95);
-
-      ui->com_comboBox->setCurrentIndex(1);
-      this->presenter->openCom(ui->com_comboBox->currentText());
-      presenter->execCmd(0x95);
-
-      ui->com_comboBox->setCurrentIndex(2);
-      this->presenter->openCom(ui->com_comboBox->currentText());
-      presenter->execCmd(0x95);*/
 }
 
 
 void MainView::on_close_btn_clicked()
 {
     this->presenter->closeCom();
-}
-
-
-void MainView::on_refresh_btn_clicked()
-{
-    this->presenter->refreshCom();
 }
 
 /*
@@ -368,3 +348,23 @@ void MainView::on_clear_btn_clicked()
     ui->messages->clear();
 }
 
+
+void MainView::on_clear_table_clicked()
+{
+     clearTable(ui->one_table);
+     clearTable(ui->two_table);
+     clearTable(ui->three_table);
+     clearTable(ui->four_table);
+     clearTable(ui->five_table);
+     clearTable(ui->six_table);
+     clearTable(ui->seven_table);
+     clearTable(ui->eight_table);
+     clearTable(ui->nine_ten_table);
+     clearTable(ui->nine_ten_table);
+     clearTable(ui->eleven_table);
+     clearTable(ui->twelve_table);
+     clearTable(ui->thirteen_table);
+     clearTable(ui->one_table);
+     clearTable(ui->one_table);
+     //lolka
+}

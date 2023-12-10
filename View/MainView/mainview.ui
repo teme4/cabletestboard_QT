@@ -167,7 +167,7 @@ QTableWidget{
           <item>
            <widget class="QLineEdit" name="device_name">
             <property name="text">
-             <string>Плата Проверки Кабелей</string>
+             <string>Плата Проверки Кабелей v1.0</string>
             </property>
             <property name="readOnly">
              <bool>true</bool>
@@ -183,41 +183,24 @@ QTableWidget{
           <string>Настройка COM</string>
          </property>
          <layout class="QGridLayout" name="gridLayout">
-          <item row="1" column="0">
+          <item row="0" column="0">
            <widget class="QPushButton" name="open_btn">
             <property name="text">
              <string>Определить и открыть порт</string>
             </property>
            </widget>
           </item>
-          <item row="0" column="1">
-           <widget class="QComboBox" name="com_comboBox"/>
-          </item>
           <item row="1" column="1">
-           <widget class="QPushButton" name="close_btn">
-            <property name="text">
-             <string>Закрыть</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="0">
-           <widget class="QLabel" name="com_label">
-            <property name="text">
-             <string>COM порт</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="0">
-           <widget class="QPushButton" name="refresh_btn">
-            <property name="text">
-             <string>Обновить список</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="1">
            <widget class="QPushButton" name="clear_btn">
             <property name="text">
              <string>Очистить консоль</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QPushButton" name="clear_table">
+            <property name="text">
+             <string>Скрыть состояние кабеля</string>
             </property>
            </widget>
           </item>

@@ -1,5 +1,8 @@
 #include "serialportsender.h"
 
+QList<QString> result;
+QList<QString> manufactors;
+int n=0;
 SerialPortSender::SerialPortSender()
 {
     init();
@@ -73,9 +76,16 @@ void SerialPortSender::setupSerialPort(QString portName){
  * Метод для получения списка доступных SerialPort портов
  */
 QList<QString> SerialPortSender::availablePorts(){
-    QList<QString> result;
-       foreach(QSerialPortInfo port, QSerialPortInfo::availablePorts()) {
-        if (!port.isBusy()) result.append(port.portName());
+         foreach(QSerialPortInfo port, QSerialPortInfo::availablePorts()) {
+       // if (!port.isBusy()) result.append(port.portName());
+        if (!port.isBusy())
+        {
+            manufactors.append(port.manufacturer());
+            if(manufactors[n]=="FTDI")
+                result.append(port.portName());
+        }
+             n++;
            }
+         n=0;
     return result;
 }

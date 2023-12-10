@@ -82,6 +82,8 @@ private slots:
 
     void on_com_comboBox_currentIndexChanged(const QString &arg1);
 
+    void on_clear_table_clicked();
+
 private:
     Ui::MainView *ui;
     MainPresenter *presenter;
