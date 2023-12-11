@@ -57,8 +57,10 @@ void MainPresenter::closeCom(){
 void MainPresenter::refreshCom(){
     view->refreshCom(serialPortSender->availablePorts());
     view->printMessage("Список COM портов обновлён");
-
-
+}
+void MainPresenter::refreshCom1(){
+    view->refreshCom(serialPortSender->availablePorts());
+    //view->printMessage("Список COM портов обновлён");
 }
 
 

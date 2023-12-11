@@ -17,6 +17,7 @@ public:
     void openCom(QString name);
     void closeCom();
     void refreshCom();
+    void refreshCom1();
     void onWindowClose();
 
     QMap<quint8, Cable> cables;

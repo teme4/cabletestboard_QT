@@ -34,27 +34,27 @@ public:
 private slots:
     void closeEvent(QCloseEvent *event);
 
-    void on_one_btn_clicked();
+    void on_btn_1_clicked();
 
-    void on_two_btn_clicked();
+    void on_btn_2_clicked();
 
-    void on_three_btn_clicked();
+    void on_btn_3_clicked();
 
-    void on_four_btn_clicked();
+    void on_btn_4_clicked();
 
-    void on_five_btn_clicked();
+    void on_btn_5_clicked();
 
-    void on_six_btn_clicked();
+    void on_btn_6_clicked();
 
-    void on_seven_btn_clicked();
+    void on_btn_7_clicked();
 
-    void on_eight_btn_clicked();
+    void on_btn_8_clicked();
 
-    void on_nine_ten_btn_clicked();
+    void on_btn_9_clicked();
 
-    void on_eleven_btn_clicked();
+    void on_btn_10_clicked();
 
-    void on_twelve_btn_clicked();
+    void on_btn_11_clicked();
 
     void on_open_btn_clicked();
 
@@ -62,15 +62,11 @@ private slots:
 
     void on_refresh_btn_clicked();
 
-    void on_thirteen_btn_clicked();
+    void on_btn_12_clicked();
 
-    void on_fifteen_btn_clicked();
+    void on_btn_13_clicked();
 
-    void on_sixteen_btn_clicked();
-
-    void on_seventeen_btn_clicked();
-
-    void on_eighteen_btn_clicked();
+    void on_btn_14_clicked();
 
     void on_clear_btn_clicked();
 
@@ -84,7 +80,7 @@ private slots:
 
     void on_clear_table_clicked();
 
-private:
+  private:
     Ui::MainView *ui;
     MainPresenter *presenter;
 

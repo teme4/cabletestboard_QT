@@ -18,26 +18,23 @@ void MainView::init(){
             ui->messages, SLOT(scrollToBottom()));
 
     //Начальное состояние всех таблиц при старте программы
-    clearTable(ui->one_table);
-    clearTable(ui->two_table);
-    clearTable(ui->three_table);
-    clearTable(ui->four_table);
-    clearTable(ui->five_table);
-    clearTable(ui->six_table);
-    clearTable(ui->seven_table);
-    clearTable(ui->eight_table);
-    clearTable(ui->nine_ten_table);
-    clearTable(ui->eleven_table);
-    clearTable(ui->twelve_table);
-    clearTable(ui->thirteen_table);
-    clearTable(ui->fifteen_table);
-    clearTable(ui->sixteen_table);
-    clearTable(ui->seventeen_table);
-    clearTable(ui->eighteen_table);
+    clearTable(ui->table_1);
+    clearTable(ui->table_2);
+    clearTable(ui->table_3);
+    clearTable(ui->table_4);
+    clearTable(ui->table_5);
+    clearTable(ui->table_6);
+    clearTable(ui->table_7);
+    clearTable(ui->table_8);
+    clearTable(ui->table_9);
+    clearTable(ui->table_11);
+    clearTable(ui->table_12);
+    clearTable(ui->table_13);
+    clearTable(ui->table_14);
 
     //По умолчанию всегда будет "ПКУ - НККиПА (АОМ)
-    if (currentCommand == CurrentCommand::NINE) ui->nine_ten_btn->setText("ПКУ - НККиПА (АОМ)");
-    if (currentCommand == CurrentCommand::TEN) ui->nine_ten_btn->setText("ПКУ - НККиПА (БАТТ)");
+    if (currentCommand == CurrentCommand::NINE) ui->btn_9->setText("ПКУ - НККиПА (АОМ)");
+    if (currentCommand == CurrentCommand::TEN) ui->btn_9->setText("ПКУ - НККиПА (БАТТ)");
 }
 
 /*
@@ -85,55 +82,46 @@ void MainView::printMessage(QString message){
 void MainView::update(Cable cable){
     switch (cable.number) {
     case 0x01:
-        drawTable(ui->one_table, cable);
+        drawTable(ui->table_1, cable);
         break;
     case 0x02:
-        drawTable(ui->two_table, cable);
+        drawTable(ui->table_2, cable);
         break;
     case 0x03:
-        drawTable(ui->three_table, cable);
+        drawTable(ui->table_3, cable);
         break;
     case 0x04:
-        drawTable(ui->four_table, cable);
+        drawTable(ui->table_4, cable);
         break;
     case 0x05:
-        drawTable(ui->five_table, cable);
+        drawTable(ui->table_5, cable);
         break;
     case 0x06:
-        drawTable(ui->six_table, cable);
+        drawTable(ui->table_6, cable);
         break;
     case 0x07:
-        drawTable(ui->seven_table, cable);
+        drawTable(ui->table_7, cable);
         break;
     case 0x08:
-        drawTable(ui->eight_table, cable);
+        drawTable(ui->table_8, cable);
         break;
     case 0x09:
-        drawTable(ui->nine_ten_table, cable);
+        drawTable(ui->table_9, cable);
         break;
     case 0x10:
-        drawTable(ui->nine_ten_table, cable);
+        drawTable(ui->table_9, cable);
         break;
     case 0x11:
-        drawTable(ui->eleven_table, cable);
+        drawTable(ui->table_11, cable);
         break;
     case 0x12:
-        drawTable(ui->twelve_table, cable);
+        drawTable(ui->table_12, cable);
         break;
     case 0x13:
-        drawTable(ui->thirteen_table, cable);
+        drawTable(ui->table_13, cable);
         break;
-    case 0x15:
-        drawTable(ui->fifteen_table, cable);
-        break;
-    case 0x16:
-        drawTable(ui->sixteen_table, cable);
-        break;
-    case 0x17:
-        drawTable(ui->seventeen_table, cable);
-        break;
-    case 0x18:
-        drawTable(ui->eighteen_table, cable);
+    case 0x14:
+        drawTable(ui->table_14, cable);
         break;
     case 0x95:
         printMessage(QString("COM порт найдет и открыт"));
@@ -205,166 +193,151 @@ void MainView::closeEvent(QCloseEvent *event)
  */
 void MainView::on_open_btn_clicked()
 {
-    this->presenter->refreshCom();
+    int counter=0;
+    this->presenter->refreshCom1();
+     //view->refreshCom(serialPortSender->availablePorts());
+    for (int i=0;i<5 ;i++ ) {
+        if(com_ports[i]!="")
+            counter++;
+    }
       for (int i=0;i<(com_ports->count()) ; i++) {    
      // QString manufacturer = port.manufacturer();
       this->presenter->openCom(com_ports[i]);
       presenter->execCmd(0x95);
+
   }
 }
 
-
+/*
 void MainView::on_close_btn_clicked()
 {
     this->presenter->closeCom();
 }
-
+*/
 /*
  * Перед посылкой команды таблица очищается
  */
-void MainView::on_one_btn_clicked()
+void MainView::on_btn_1_clicked()
 {
-    clearTable(ui->one_table);
+    clearTable(ui->table_1);
     presenter->execCmd(0x01);
 }
 
 
-void MainView::on_two_btn_clicked()
+void MainView::on_btn_2_clicked()
 {
-    clearTable(ui->two_table);
+    clearTable(ui->table_2);
     presenter->execCmd(0x02);
 }
 
 
-void MainView::on_three_btn_clicked()
+void MainView::on_btn_3_clicked()
 {
-    clearTable(ui->three_table);
+    clearTable(ui->table_3);
     presenter->execCmd(0x03);
 }
 
 
-void MainView::on_four_btn_clicked()
+void MainView::on_btn_4_clicked()
 {
-    clearTable(ui->four_table);
+    clearTable(ui->table_4);
     presenter->execCmd(0x04);
 }
 
 
-void MainView::on_five_btn_clicked()
+void MainView::on_btn_5_clicked()
 {
-    clearTable(ui->five_table);
+    clearTable(ui->table_5);
     presenter->execCmd(0x05);
 }
 
 
-void MainView::on_six_btn_clicked()
+void MainView::on_btn_6_clicked()
 {
-    clearTable(ui->six_table);
+    clearTable(ui->table_6);
     presenter->execCmd(0x06);
 }
 
 
-void MainView::on_seven_btn_clicked()
+void MainView::on_btn_7_clicked()
 {
-    clearTable(ui->seven_table);
+    clearTable(ui->table_7);
     presenter->execCmd(0x07);
 }
 
 
-void MainView::on_eight_btn_clicked()
+void MainView::on_btn_8_clicked()
 {
-    clearTable(ui->eight_table);
+    clearTable(ui->table_8);
     presenter->execCmd(0x08);
 }
 
-void MainView::on_nine_ten_btn_clicked()
+void MainView::on_btn_9_clicked()
 {
 
-    clearTable(ui->nine_ten_table);
+    clearTable(ui->table_9);
 
     switch (currentCommand) {
     case CurrentCommand::NINE:
         presenter->execCmd(0x09);
         currentCommand = CurrentCommand::TEN;
-        ui->nine_ten_btn->setText("ПКУ - НККиПА (БАТТ)");
+        ui->btn_9->setText("ПКУ - НККиПА (БАТТ)");
         break;
     case CurrentCommand::TEN:
         presenter->execCmd(0x10);
         currentCommand = CurrentCommand::NINE;
-        ui->nine_ten_btn->setText("ПКУ - НККиПА (АОМ)");
+        ui->btn_9->setText("ПКУ - НККиПА (АОМ)");
         break;
     }
 }
 
-void MainView::on_eleven_btn_clicked()
+void MainView::on_btn_11_clicked()
 {
-    clearTable(ui->eleven_table);
+    clearTable(ui->table_11);
     presenter->execCmd(0x11);
 }
 
 
-void MainView::on_twelve_btn_clicked()
+void MainView::on_btn_12_clicked()
 {
-    clearTable(ui->twelve_table);
+    clearTable(ui->table_12);
     presenter->execCmd(0x12);
 }
 
-void MainView::on_thirteen_btn_clicked()
+void MainView::on_btn_13_clicked()
 {
-    clearTable(ui->thirteen_table);
+    clearTable(ui->table_13);
     presenter->execCmd(0x13);
 }
 
-
-void MainView::on_fifteen_btn_clicked()
+void MainView::on_btn_14_clicked()
 {
-    clearTable(ui->fifteen_table);
-    presenter->execCmd(0x15);
+    clearTable(ui->table_14);
+    presenter->execCmd(0x14);
 }
-
-
-void MainView::on_sixteen_btn_clicked()
-{
-    clearTable(ui->sixteen_table);
-    presenter->execCmd(0x16);
-}
-
-
-void MainView::on_seventeen_btn_clicked()
-{
-    clearTable(ui->seventeen_table);
-    presenter->execCmd(0x17);
-}
-
-void MainView::on_eighteen_btn_clicked()
-{
-    clearTable(ui->eighteen_table);
-    presenter->execCmd(0x18);
-}
-
-
+/*
 void MainView::on_clear_btn_clicked()
 {
     ui->messages->clear();
 }
-
+*/
 
 void MainView::on_clear_table_clicked()
 {
-     clearTable(ui->one_table);
-     clearTable(ui->two_table);
-     clearTable(ui->three_table);
-     clearTable(ui->four_table);
-     clearTable(ui->five_table);
-     clearTable(ui->six_table);
-     clearTable(ui->seven_table);
-     clearTable(ui->eight_table);
-     clearTable(ui->nine_ten_table);
-     clearTable(ui->nine_ten_table);
-     clearTable(ui->eleven_table);
-     clearTable(ui->twelve_table);
-     clearTable(ui->thirteen_table);
-     clearTable(ui->one_table);
-     clearTable(ui->one_table);
-     //lolka
+    clearTable(ui->table_1);
+    clearTable(ui->table_2);
+    clearTable(ui->table_3);
+    clearTable(ui->table_4);
+    clearTable(ui->table_5);
+    clearTable(ui->table_6);
+    clearTable(ui->table_7);
+    clearTable(ui->table_8);
+    clearTable(ui->table_9);
+    clearTable(ui->table_11);
+    clearTable(ui->table_12);
+    clearTable(ui->table_13);
+    clearTable(ui->table_14);
+
 }
+
+
