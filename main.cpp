@@ -1,6 +1,7 @@
 #include "View/MainView/mainview.h"
-
 #include <QApplication>
+#include <QCoreApplication>
+#include "Common/Thread/examplethreads.h"
 
 int main(int argc, char *argv[])
 {
@@ -13,9 +14,21 @@ int main(int argc, char *argv[])
         QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     }
 
-    QApplication a(argc, argv);
-    MainView view;
-    new MainPresenter(&view);
-    view.show();
-    return a.exec();
+    QApplication app(argc, argv);
+    //QCoreApplication a(argc, argv);
+
+  //  ExampleThreads threadA("thread A");
+   // ExampleThreads threadB("thread B");
+   // ExampleThreads threadC("thread C");
+
+
+    //threadA.start();    // Запускаем потоки
+   // threadB.start();    // и наблюдаем их параллельную работу
+   // threadC.start();    // в выводе qDebug
+
+   MainView view;
+   new MainPresenter(&view);
+   view.show();
+
+    return app.exec();
 }

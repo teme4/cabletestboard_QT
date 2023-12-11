@@ -416,7 +416,7 @@ border-radius: 0px;</string>
        <item row="8" column="0">
         <widget class="QPushButton" name="btn_9">
          <property name="text">
-          <string>ПКУ - НККиПА</string>
+          <string>ПКУ-НКК-БАТ-АОМ</string>
          </property>
         </widget>
        </item>

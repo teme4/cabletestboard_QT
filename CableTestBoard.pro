@@ -12,6 +12,7 @@ CONFIG += c++11
 
 SOURCES += \
     Common/SerialPortSender/serialportsender.cpp \
+    Common/Thread/examplethreads.cpp \
     Common/Utils/utils.cpp \
     Model/Cable/cable.cpp \
     Presenter/MainPresenter/mainpresenter.cpp \
@@ -20,6 +21,7 @@ SOURCES += \
 
 HEADERS += \
     Common/SerialPortSender/serialportsender.h \
+    Common/Thread/examplethreads.h \
     Common/Utils/CRC.h \
     Common/Utils/utils.h \
     Model/Cable/cable.h \

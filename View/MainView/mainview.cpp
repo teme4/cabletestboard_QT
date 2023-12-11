@@ -32,10 +32,7 @@ void MainView::init(){
     clearTable(ui->table_13);
     clearTable(ui->table_14);
 
-    //По умолчанию всегда будет "ПКУ - НККиПА (АОМ)
-    if (currentCommand == CurrentCommand::NINE) ui->btn_9->setText("ПКУ - НККиПА (АОМ)");
-    if (currentCommand == CurrentCommand::TEN) ui->btn_9->setText("ПКУ - НККиПА (БАТТ)");
-}
+    }
 
 /*
  * Деструктор
@@ -274,21 +271,8 @@ void MainView::on_btn_8_clicked()
 
 void MainView::on_btn_9_clicked()
 {
-
     clearTable(ui->table_9);
-
-    switch (currentCommand) {
-    case CurrentCommand::NINE:
-        presenter->execCmd(0x09);
-        currentCommand = CurrentCommand::TEN;
-        ui->btn_9->setText("ПКУ - НККиПА (БАТТ)");
-        break;
-    case CurrentCommand::TEN:
-        presenter->execCmd(0x10);
-        currentCommand = CurrentCommand::NINE;
-        ui->btn_9->setText("ПКУ - НККиПА (АОМ)");
-        break;
-    }
+    presenter->execCmd(0x09);
 }
 
 void MainView::on_btn_11_clicked()
@@ -341,3 +325,8 @@ void MainView::on_clear_table_clicked()
 }
 
 
+
+void MainView::on_clear_btn_clicked()
+{
+   ui->messages->clear();
+}

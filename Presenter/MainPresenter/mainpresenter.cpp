@@ -1,6 +1,8 @@
 #include "mainpresenter.h"
 #include <View/MainView/mainview.h>
 
+
+
 MainPresenter::MainPresenter(MainView *view)
 {
     this->view = view;

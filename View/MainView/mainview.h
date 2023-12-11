@@ -52,15 +52,9 @@ private slots:
 
     void on_btn_9_clicked();
 
-    void on_btn_10_clicked();
-
     void on_btn_11_clicked();
 
-    void on_open_btn_clicked();
-
-    void on_close_btn_clicked();
-
-    void on_refresh_btn_clicked();
+    void on_open_btn_clicked();  
 
     void on_btn_12_clicked();
 
@@ -69,14 +63,6 @@ private slots:
     void on_btn_14_clicked();
 
     void on_clear_btn_clicked();
-
-    void on_open_btn_pressed();
-
-    void on_refresh_btn_pressed();
-
-    void on_com_comboBox_activated(const QString &arg1);
-
-    void on_com_comboBox_currentIndexChanged(const QString &arg1);
 
     void on_clear_table_clicked();
 
