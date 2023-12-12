@@ -384,5 +384,57 @@ void MainView::on_btn_2_2_clicked()
    QDesktopServices::openUrl(QUrl(QDir::currentPath()+"/cables/2"));
 }
 
+void MainView::on_btn_3_3_clicked()
+{
+     QDesktopServices::openUrl(QUrl(QDir::currentPath()+"/cables/3"));
+}
 
+void MainView::on_btn_4_4_clicked()
+{
+  QDesktopServices::openUrl(QUrl(QDir::currentPath()+"/cables/4"));
+}
 
+void MainView::on_btn_5_5_clicked()
+{
+    QDesktopServices::openUrl(QUrl(QDir::currentPath()+"/cables/5"));
+}
+
+void MainView::on_btn_6_6_clicked()
+{
+  QDesktopServices::openUrl(QUrl(QDir::currentPath()+"/cables/6"));
+}
+
+void MainView::on_btn_7_7_clicked()
+{
+  QDesktopServices::openUrl(QUrl(QDir::currentPath()+"/cables/7"));
+}
+
+void MainView::on_btn_8_8_clicked()
+{
+     QDesktopServices::openUrl(QUrl(QDir::currentPath()+"/cables/8"));
+}
+
+void MainView::on_btn_9_9_clicked()
+{
+   QDesktopServices::openUrl(QUrl(QDir::currentPath()+"/cables/9"));
+}
+
+void MainView::on_btn_10_10_clicked()
+{
+     QDesktopServices::openUrl(QUrl(QDir::currentPath()+"/cables/10"));
+}
+
+void MainView::on_btn_11_11_clicked()
+{
+     QDesktopServices::openUrl(QUrl(QDir::currentPath()+"/cables/11"));
+}
+
+void MainView::on_btn_12_12_clicked()
+{
+     QDesktopServices::openUrl(QUrl(QDir::currentPath()+"/cables/12"));
+}
+
+void MainView::on_btn_13_13_clicked()
+{
+     QDesktopServices::openUrl(QUrl(QDir::currentPath()+"/cables/13"));
+}

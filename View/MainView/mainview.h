@@ -73,6 +73,28 @@ private slots:
 
     void on_btn_2_2_clicked();
 
+    void on_btn_3_3_clicked();
+
+    void on_btn_4_4_clicked();
+
+    void on_btn_5_5_clicked();
+
+    void on_btn_6_6_clicked();
+
+    void on_btn_7_7_clicked();
+
+    void on_btn_8_8_clicked();
+
+    void on_btn_9_9_clicked();
+
+    void on_btn_10_10_clicked();
+
+    void on_btn_11_11_clicked();
+
+    void on_btn_12_12_clicked();
+
+    void on_btn_13_13_clicked();
+
 public:
      std::array<handler,13>btns{
         &MainView::on_btn_1_clicked,
