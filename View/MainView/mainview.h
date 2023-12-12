@@ -23,15 +23,18 @@ class MainView : public QMainWindow
 public:
     MainView(QWidget *parent = nullptr);
     ~MainView();
-    void init();
+    void init();   
     void attachPresenter(MainPresenter *presenter);
     void refreshCom(QList<QString> ports);
     void printMessage(QString message);
     void update(Cable cable);
     void drawTable(QTableWidget* table, Cable cable);
     void clearTable(QTableWidget* table);
+ using handler= void(MainView::*) ();
+
 
 private slots:
+
     void closeEvent(QCloseEvent *event);
 
     void on_btn_1_clicked();
@@ -60,13 +63,34 @@ private slots:
 
     void on_btn_13_clicked();
 
-    void on_btn_14_clicked();
-
     void on_clear_btn_clicked();
 
     void on_clear_table_clicked();
 
-  private:
+    void on_btn_1_1_clicked();
+
+    void on_btn_10_clicked();
+
+    void on_btn_2_2_clicked();
+
+public:
+     std::array<handler,13>btns{
+        &MainView::on_btn_1_clicked,
+        &MainView::on_btn_2_clicked,
+        &MainView::on_btn_3_clicked,
+        &MainView::on_btn_4_clicked,
+        &MainView::on_btn_5_clicked,
+        &MainView::on_btn_6_clicked,
+        &MainView::on_btn_7_clicked,
+        &MainView::on_btn_8_clicked,
+        &MainView::on_btn_9_clicked,
+        &MainView::on_btn_10_clicked,
+        &MainView::on_btn_11_clicked,
+        &MainView::on_btn_12_clicked,
+        &MainView::on_btn_13_clicked
+    };
+
+private:
     Ui::MainView *ui;
     MainPresenter *presenter;
 

@@ -1,4 +1,6 @@
 #include "serialportsender.h"
+#include <QDebug>
+#include <iostream>
 
 QList<QString> result;
 QList<QString> manufactors;
@@ -30,7 +32,10 @@ void SerialPortSender::init(){
  * Прием пакетов по SerialPort
  */
 void SerialPortSender::serialReceive(){
+    if (serial->bytesAvailable()>11)
+       {
     emit dataReceived(serial->readAll());
+  }
 }
 
 /*

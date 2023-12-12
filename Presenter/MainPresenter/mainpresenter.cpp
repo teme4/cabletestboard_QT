@@ -25,26 +25,36 @@ void MainPresenter::init(){
     QObject::connect(serialPortSender, &SerialPortSender::dataReceived, this, &MainPresenter::onDataReceived);
 
     //Обновление списка портов при старте программы
-   refreshCom();
+   //refreshCom();
 
 }
 
 /*
  * Послать на COM порт команду cmd
  */
-void MainPresenter::execCmd(quint8 cmd){
+bool MainPresenter::execCmd(quint8 cmd){
+    bool state=serialPortSender->writeInSerialPort(Utils::buildCmd(cmd));
     QString command = QString("0x%1").arg(QString::number(cmd, 16).rightJustified(2, '0').toUpper());
     view->printMessage(serialPortSender->writeInSerialPort(Utils::buildCmd(cmd)) ? QString("Отправлена команда %1").arg(command) : QString("Не удалось отправить команду %1").arg(command));
+    return state;
 }
 
 /*
  * Открыть COM порт с именем name
  */
+/*
 void MainPresenter::openCom(QString name){
     view->printMessage(serialPortSender->openComRW(name) ? QString("%1 открыт").arg(name) : QString("Не удалось открыть %1").arg(name));
 
+}*/
+bool MainPresenter::openCom(QString name){
+   bool result=serialPortSender->openComRW(name);
+  if(result==1)
+  {
+     view->printMessage(QString("%1 открыт").arg(name));
+  }
+   return result;
 }
-
 /*
  * Закрыть текущий COM порт
  */

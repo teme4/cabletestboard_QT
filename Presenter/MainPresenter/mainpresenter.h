@@ -13,8 +13,8 @@ class MainPresenter : public QObject
 {
 public:
     MainPresenter(MainView *view);
-    void execCmd(quint8 cmd);
-    void openCom(QString name);
+    bool execCmd(quint8 cmd);
+    bool openCom(QString name);
     void closeCom();
     void refreshCom();
     void refreshCom1();

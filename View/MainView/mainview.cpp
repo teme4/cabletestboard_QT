@@ -1,6 +1,6 @@
 #include "mainview.h"
 #include "ui_mainview.h"
-
+#include <QDesktopServices>
 MainView::MainView(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainView)
@@ -12,26 +12,58 @@ MainView::MainView(QWidget *parent)
 /*
  * Инициализация
  */
+
+
+
+
+
+
+
 void MainView::init(){
+    QVector<QPushButton*> buttons={ui->btn_1_1,
+                                   ui->btn_2_2,
+                                   ui->btn_3_3,
+                                   ui->btn_4_4,
+                                   ui->btn_5_5,
+                                   ui->btn_6_6,
+                                   ui->btn_7_7,
+                                   ui->btn_8_8,
+                                   ui->btn_9_9,
+                                   ui->btn_10_10,
+                                   ui->btn_11_11,
+                                   ui->btn_12_12,
+                                   ui->btn_13_13};
+
+    QVector<QTableWidget*> tables={ui->table_1,
+                                   ui->table_2,
+                                   ui->table_3,
+                                   ui->table_4,
+                                   ui->table_5,
+                                   ui->table_6,
+                                   ui->table_7,
+                                   ui->table_8,
+                                   ui->table_9,
+                                   ui->table_10,
+                                   ui->table_11,
+                                   ui->table_12,
+                                   ui->table_13};
+
     //Список с сообщениями будет скроллится вниз каждый раз при добавлении нового сообщения
     connect(ui->messages->model(), SIGNAL(rowsInserted(QModelIndex,int,int)),
             ui->messages, SLOT(scrollToBottom()));
 
-    //Начальное состояние всех таблиц при старте программы
-    clearTable(ui->table_1);
-    clearTable(ui->table_2);
-    clearTable(ui->table_3);
-    clearTable(ui->table_4);
-    clearTable(ui->table_5);
-    clearTable(ui->table_6);
-    clearTable(ui->table_7);
-    clearTable(ui->table_8);
-    clearTable(ui->table_9);
-    clearTable(ui->table_11);
-    clearTable(ui->table_12);
-    clearTable(ui->table_13);
-    clearTable(ui->table_14);
+     //Отрисовка иконок для кнопок
+    for(QPushButton *btn : buttons) {
+     btn->setIcon(QIcon(QDir::currentPath()+"/icons/1.png"));
+     btn->setToolTip("optional tooltip");
+     btn->setFixedSize(32,32);
+ }
 
+    //Начальное состояние всех таблиц при старте программы
+    for(int i=0;i<13;i++)
+    {
+      clearTable(tables.at(i));
+    }
     }
 
 /*
@@ -106,7 +138,7 @@ void MainView::update(Cable cable){
         drawTable(ui->table_9, cable);
         break;
     case 0x10:
-        drawTable(ui->table_9, cable);
+        drawTable(ui->table_10, cable);
         break;
     case 0x11:
         drawTable(ui->table_11, cable);
@@ -116,10 +148,7 @@ void MainView::update(Cable cable){
         break;
     case 0x13:
         drawTable(ui->table_13, cable);
-        break;
-    case 0x14:
-        drawTable(ui->table_14, cable);
-        break;
+        break;   
     case 0x95:
         printMessage(QString("COM порт найдет и открыт"));
         break;
@@ -191,17 +220,19 @@ void MainView::closeEvent(QCloseEvent *event)
 void MainView::on_open_btn_clicked()
 {
     int counter=0;
+    bool state;
     this->presenter->refreshCom1();
-     //view->refreshCom(serialPortSender->availablePorts());
+
     for (int i=0;i<5 ;i++ ) {
         if(com_ports[i]!="")
             counter++;
     }
-      for (int i=0;i<(com_ports->count()) ; i++) {    
-     // QString manufacturer = port.manufacturer();
-      this->presenter->openCom(com_ports[i]);
-      presenter->execCmd(0x95);
-
+      for (int i=0;i<(counter) ; i++) {
+      if(presenter->openCom(com_ports[i])==1)
+      {
+         if(presenter->execCmd(0x95)==0)
+           presenter->closeCom();
+      }
   }
 }
 
@@ -217,88 +248,102 @@ void MainView::on_close_btn_clicked()
 void MainView::on_btn_1_clicked()
 {
     clearTable(ui->table_1);
-    presenter->execCmd(0x01);
+    if(presenter->execCmd(0x01)==0)
+        presenter->execCmd(0x01);
 }
 
 
 void MainView::on_btn_2_clicked()
 {
     clearTable(ui->table_2);
-    presenter->execCmd(0x02);
+    if(presenter->execCmd(0x02)==0)
+        presenter->execCmd(0x02);
 }
 
 
 void MainView::on_btn_3_clicked()
 {
     clearTable(ui->table_3);
-    presenter->execCmd(0x03);
+    if(presenter->execCmd(0x03)==0)
+        presenter->execCmd(0x03);
 }
 
 
 void MainView::on_btn_4_clicked()
 {
     clearTable(ui->table_4);
-    presenter->execCmd(0x04);
+    if(presenter->execCmd(0x04)==0)
+        presenter->execCmd(0x04);
 }
 
 
 void MainView::on_btn_5_clicked()
 {
     clearTable(ui->table_5);
-    presenter->execCmd(0x05);
+    if(presenter->execCmd(0x05)==0)
+        presenter->execCmd(0x05);
 }
 
 
 void MainView::on_btn_6_clicked()
 {
     clearTable(ui->table_6);
-    presenter->execCmd(0x06);
+    if(presenter->execCmd(0x06)==0)
+        presenter->execCmd(0x06);
 }
 
 
 void MainView::on_btn_7_clicked()
 {
     clearTable(ui->table_7);
-    presenter->execCmd(0x07);
+    if(presenter->execCmd(0x07)==0)
+        presenter->execCmd(0x07);
 }
 
 
 void MainView::on_btn_8_clicked()
 {
     clearTable(ui->table_8);
-    presenter->execCmd(0x08);
+    if(presenter->execCmd(0x08)==0)
+        presenter->execCmd(0x08);
 }
 
 void MainView::on_btn_9_clicked()
 {
     clearTable(ui->table_9);
-    presenter->execCmd(0x09);
+    if(presenter->execCmd(0x09)==0)
+        presenter->execCmd(0x09);
+}
+
+void MainView::on_btn_10_clicked()
+{
+    clearTable(ui->table_10);
+    if(presenter->execCmd(0x10)==0)
+        presenter->execCmd(0x10);
 }
 
 void MainView::on_btn_11_clicked()
 {
     clearTable(ui->table_11);
-    presenter->execCmd(0x11);
+    if(presenter->execCmd(0x11)==0)
+        presenter->execCmd(0x11);
 }
 
 
 void MainView::on_btn_12_clicked()
 {
     clearTable(ui->table_12);
-    presenter->execCmd(0x12);
+    if(presenter->execCmd(0x12)==0)
+        presenter->execCmd(0x12);
 }
 
 void MainView::on_btn_13_clicked()
 {
     clearTable(ui->table_13);
-    presenter->execCmd(0x13);
+    if(presenter->execCmd(0x13)==0)
+        presenter->execCmd(0x13);
 }
 
-void MainView::on_btn_14_clicked()
-{
-    clearTable(ui->table_14);
-    presenter->execCmd(0x14);
-}
 /*
 void MainView::on_clear_btn_clicked()
 {
@@ -320,13 +365,24 @@ void MainView::on_clear_table_clicked()
     clearTable(ui->table_11);
     clearTable(ui->table_12);
     clearTable(ui->table_13);
-    clearTable(ui->table_14);
 
 }
-
-
 
 void MainView::on_clear_btn_clicked()
 {
    ui->messages->clear();
 }
+ QDesktopServices services;
+
+void MainView::on_btn_1_1_clicked()
+{
+   QDesktopServices::openUrl(QUrl(QDir::currentPath()+"/cables/1"));
+}
+
+void MainView::on_btn_2_2_clicked()
+{
+   QDesktopServices::openUrl(QUrl(QDir::currentPath()+"/cables/2"));
+}
+
+
+
