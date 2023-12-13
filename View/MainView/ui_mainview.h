@@ -93,7 +93,7 @@ public:
     QPushButton *btn_10;
     QPushButton *btn_9_9;
     QTableWidget *table_13;
-    QTableWidget *tableWidget;
+    QTableWidget *table_0;
 
     void setupUi(QMainWindow *MainView)
     {
@@ -576,10 +576,10 @@ public:
 
         cables->addWidget(table_13, 13, 4, 1, 1);
 
-        tableWidget = new QTableWidget(right_group);
-        tableWidget->setObjectName(QString::fromUtf8("tableWidget"));
+        table_0 = new QTableWidget(right_group);
+        table_0->setObjectName(QString::fromUtf8("table_0"));
 
-        cables->addWidget(tableWidget, 0, 4, 1, 1);
+        cables->addWidget(table_0, 0, 4, 1, 1);
 
 
         horizontalLayout->addWidget(right_group);

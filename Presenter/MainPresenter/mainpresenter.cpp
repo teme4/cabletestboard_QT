@@ -1,4 +1,5 @@
 #include "mainpresenter.h"
+#include "Common/Thread/examplethreads.h"
 #include <View/MainView/mainview.h>
 
 
@@ -20,9 +21,9 @@ void MainPresenter::init(){
     view->attachPresenter(this);
 
     this->serialPortSender = new SerialPortSender();
-
     //Когда в serialPortSender приходят данные - вызывается метод презентера onDataReceived
     QObject::connect(serialPortSender, &SerialPortSender::dataReceived, this, &MainPresenter::onDataReceived);
+  // QObject::connect(serialPortSender, &SerialPortSender::dataReceived, &ExampleThreads, &ExampleThreads::run);
 
     //Обновление списка портов при старте программы
    //refreshCom();

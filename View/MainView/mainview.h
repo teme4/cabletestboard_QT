@@ -31,7 +31,7 @@ public:
     void update(Cable cable);
     void drawTable(QTableWidget* table, Cable cable);
     void clearTable(QTableWidget* table);
- using handler= void(MainView::*) ();
+    using handler= void(MainView::*)(void);
 
 
 
@@ -97,6 +97,12 @@ private slots:
     void on_btn_12_12_clicked();
 
     void on_btn_13_13_clicked();
+
+    void on_pushButton_clicked();
+
+    void on_tableWidget_cellActivated(int row, int column);
+
+    void on_table_0_cellActivated(int row, int column);
 
 public:
      std::array<handler,13>btns{

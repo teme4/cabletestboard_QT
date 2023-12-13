@@ -1,4 +1,5 @@
 #include "serialportsender.h"
+#include "Common/Thread/examplethreads.h"
 #include <QDebug>
 #include <iostream>
 
@@ -25,7 +26,8 @@ void SerialPortSender::init(){
 
     //Присоединение сигналов к функциям
     connect(serial, &QSerialPort::readyRead, this, &SerialPortSender::serialReceive);
-
+     connect(serial, &QSerialPort::readyRead, this, &SerialPortSender::serialReceive);
+     //connect(serial, &QSerialPort::readyRead, this, &ExampleThreads::run);
 }
 
 /*
