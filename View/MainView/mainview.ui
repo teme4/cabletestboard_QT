@@ -290,137 +290,101 @@ border-radius: 0px;</string>
        <property name="spacing">
         <number>6</number>
        </property>
-       <item row="1" column="1">
-        <widget class="QPushButton" name="btn_2">
-         <property name="text">
-          <string>НККиПА - Плата перекл.</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <widget class="QPushButton" name="btn_3">
-         <property name="text">
-          <string>Плата перекл. 1 - Плата перекл. 2</string>
-         </property>
-        </widget>
-       </item>
-       <item row="10" column="2">
-        <widget class="QTableWidget" name="table_11"/>
-       </item>
-       <item row="10" column="1">
-        <widget class="QPushButton" name="btn_11">
-         <property name="text">
-          <string>ДОФ-холодильик</string>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="2">
-        <widget class="QTableWidget" name="table_5"/>
-       </item>
-       <item row="5" column="2">
-        <widget class="QTableWidget" name="table_6"/>
-       </item>
-       <item row="0" column="1">
-        <widget class="QPushButton" name="btn_1">
-         <property name="text">
-          <string>НККиПА - МЛИ</string>
-         </property>
-        </widget>
-       </item>
-       <item row="11" column="1">
+       <item row="12" column="2">
         <widget class="QPushButton" name="btn_12">
          <property name="text">
           <string>Ethernet</string>
          </property>
         </widget>
        </item>
-       <item row="4" column="1">
-        <widget class="QPushButton" name="btn_5">
+       <item row="13" column="0">
+        <widget class="QPushButton" name="btn_13_13">
          <property name="text">
-          <string>ПКУ-КМ (Боб)</string>
+          <string/>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
          </property>
         </widget>
        </item>
-       <item row="12" column="2">
-        <widget class="QTableWidget" name="table_13"/>
+       <item row="6" column="4">
+        <widget class="QTableWidget" name="table_6"/>
+       </item>
+       <item row="0" column="2">
+        <widget class="QPushButton" name="pushButton">
+         <property name="text">
+          <string>PushButton</string>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="2">
+        <widget class="QPushButton" name="btn_11">
+         <property name="text">
+          <string>ДОФ-холодильик</string>
+         </property>
+        </widget>
        </item>
        <item row="6" column="2">
-        <widget class="QTableWidget" name="table_7"/>
-       </item>
-       <item row="5" column="1">
         <widget class="QPushButton" name="btn_6">
          <property name="text">
           <string>ПКУ - SD/ SC</string>
          </property>
         </widget>
        </item>
-       <item row="8" column="2">
-        <widget class="QTableWidget" name="table_9"/>
+       <item row="2" column="4">
+        <widget class="QTableWidget" name="table_2"/>
        </item>
-       <item row="7" column="1">
+       <item row="8" column="2">
         <widget class="QPushButton" name="btn_8">
          <property name="text">
           <string>ПКУ - НККиПА (UART)</string>
          </property>
         </widget>
        </item>
-       <item row="0" column="2">
-        <widget class="QTableWidget" name="table_1"/>
-       </item>
-       <item row="8" column="1">
-        <widget class="QPushButton" name="btn_9">
+       <item row="7" column="0">
+        <widget class="QPushButton" name="btn_7_7">
          <property name="text">
-          <string>ПКУ-НКК-БАТ-АОМ</string>
+          <string/>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
          </property>
         </widget>
-       </item>
-       <item row="2" column="2">
-        <widget class="QTableWidget" name="table_3"/>
-       </item>
-       <item row="9" column="2">
-        <widget class="QTableWidget" name="table_10"/>
-       </item>
-       <item row="7" column="2">
-        <widget class="QTableWidget" name="table_8"/>
-       </item>
-       <item row="1" column="2">
-        <widget class="QTableWidget" name="table_2"/>
-       </item>
-       <item row="6" column="1">
-        <widget class="QPushButton" name="btn_7">
-         <property name="text">
-          <string>НККиПА - Компенс. дисп.</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="1">
-        <widget class="QPushButton" name="btn_4">
-         <property name="text">
-          <string>ПКУ-КМ (Алиса)</string>
-         </property>
-        </widget>
-       </item>
-       <item row="11" column="2">
-        <widget class="QTableWidget" name="table_12"/>
        </item>
        <item row="3" column="2">
-        <widget class="QTableWidget" name="table_4"/>
-       </item>
-       <item row="12" column="1">
-        <widget class="QPushButton" name="btn_13">
+        <widget class="QPushButton" name="btn_3">
          <property name="text">
-          <string>НКК - ОП</string>
+          <string>Плата перекл. 1 - Плата перекл. 2</string>
          </property>
         </widget>
        </item>
-       <item row="9" column="1">
-        <widget class="QPushButton" name="btn_10">
+       <item row="2" column="0">
+        <widget class="QPushButton" name="btn_2_2">
          <property name="text">
-          <string>ПКУ - ДОФ </string>
+          <string/>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
          </property>
         </widget>
        </item>
-       <item row="0" column="0">
+       <item row="1" column="2">
+        <widget class="QPushButton" name="btn_1">
+         <property name="text">
+          <string>НККиПА - МЛИ</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
         <widget class="QPushButton" name="btn_1_1">
          <property name="palette">
           <palette>
@@ -567,9 +531,9 @@ border-radius: 0px;</string>
             <colorrole role="Button">
              <brush brushstyle="SolidPattern">
               <color alpha="255">
-               <red>0</red>
-               <green>126</green>
-               <blue>132</blue>
+               <red>240</red>
+               <green>240</green>
+               <blue>240</blue>
               </color>
              </brush>
             </colorrole>
@@ -635,137 +599,47 @@ border-radius: 0px;</string>
          </property>
         </widget>
        </item>
-       <item row="1" column="0">
-        <widget class="QPushButton" name="btn_2_2">
+       <item row="5" column="2">
+        <widget class="QPushButton" name="btn_5">
          <property name="text">
-          <string/>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>32</width>
-           <height>32</height>
-          </size>
+          <string>ПКУ-КМ (Боб)</string>
          </property>
         </widget>
        </item>
-       <item row="2" column="0">
-        <widget class="QPushButton" name="btn_3_3">
+       <item row="8" column="4">
+        <widget class="QTableWidget" name="table_8"/>
+       </item>
+       <item row="4" column="4">
+        <widget class="QTableWidget" name="table_4"/>
+       </item>
+       <item row="9" column="2">
+        <widget class="QPushButton" name="btn_9">
          <property name="text">
-          <string/>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>32</width>
-           <height>32</height>
-          </size>
+          <string>ПКУ-НКК-БАТ-АОМ</string>
          </property>
         </widget>
        </item>
-       <item row="3" column="0">
-        <widget class="QPushButton" name="btn_4_4">
+       <item row="3" column="4">
+        <widget class="QTableWidget" name="table_3"/>
+       </item>
+       <item row="10" column="4">
+        <widget class="QTableWidget" name="table_10"/>
+       </item>
+       <item row="13" column="2">
+        <widget class="QPushButton" name="btn_13">
          <property name="text">
-          <string/>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>32</width>
-           <height>32</height>
-          </size>
+          <string>НКК - ОП</string>
          </property>
         </widget>
        </item>
-       <item row="4" column="0">
-        <widget class="QPushButton" name="btn_5_5">
+       <item row="4" column="2">
+        <widget class="QPushButton" name="btn_4">
          <property name="text">
-          <string/>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>32</width>
-           <height>32</height>
-          </size>
+          <string>ПКУ-КМ (Алиса)</string>
          </property>
         </widget>
        </item>
-       <item row="5" column="0">
-        <widget class="QPushButton" name="btn_6_6">
-         <property name="text">
-          <string/>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>32</width>
-           <height>32</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="0">
-        <widget class="QPushButton" name="btn_7_7">
-         <property name="text">
-          <string/>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>32</width>
-           <height>32</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="0">
-        <widget class="QPushButton" name="btn_8_8">
-         <property name="text">
-          <string/>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>32</width>
-           <height>32</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item row="8" column="0">
-        <widget class="QPushButton" name="btn_9_9">
-         <property name="text">
-          <string/>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>32</width>
-           <height>32</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item row="9" column="0">
-        <widget class="QPushButton" name="btn_10_10">
-         <property name="text">
-          <string/>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>32</width>
-           <height>32</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item row="10" column="0">
-        <widget class="QPushButton" name="btn_11_11">
-         <property name="text">
-          <string/>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>32</width>
-           <height>32</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item row="11" column="0">
+       <item row="12" column="0">
         <widget class="QPushButton" name="btn_12_12">
          <property name="text">
           <string/>
@@ -778,8 +652,8 @@ border-radius: 0px;</string>
          </property>
         </widget>
        </item>
-       <item row="12" column="0">
-        <widget class="QPushButton" name="btn_13_13">
+       <item row="11" column="0">
+        <widget class="QPushButton" name="btn_11_11">
          <property name="text">
           <string/>
          </property>
@@ -790,6 +664,142 @@ border-radius: 0px;</string>
           </size>
          </property>
         </widget>
+       </item>
+       <item row="1" column="4">
+        <widget class="QTableWidget" name="table_1"/>
+       </item>
+       <item row="6" column="0">
+        <widget class="QPushButton" name="btn_6_6">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="4">
+        <widget class="QTableWidget" name="table_5"/>
+       </item>
+       <item row="7" column="2">
+        <widget class="QPushButton" name="btn_7">
+         <property name="text">
+          <string>НККиПА - Компенс. дисп.</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QPushButton" name="btn_5_5">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2">
+        <widget class="QPushButton" name="btn_2">
+         <property name="text">
+          <string>НККиПА - Плата перекл.</string>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="0">
+        <widget class="QPushButton" name="btn_10_10">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="12" column="4">
+        <widget class="QTableWidget" name="table_12"/>
+       </item>
+       <item row="8" column="0">
+        <widget class="QPushButton" name="btn_8_8">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="4">
+        <widget class="QTableWidget" name="table_7"/>
+       </item>
+       <item row="11" column="4">
+        <widget class="QTableWidget" name="table_11"/>
+       </item>
+       <item row="3" column="0">
+        <widget class="QPushButton" name="btn_3_3">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QPushButton" name="btn_4_4">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="4">
+        <widget class="QTableWidget" name="table_9"/>
+       </item>
+       <item row="10" column="2">
+        <widget class="QPushButton" name="btn_10">
+         <property name="text">
+          <string>ПКУ - ДОФ </string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="0">
+        <widget class="QPushButton" name="btn_9_9">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="13" column="4">
+        <widget class="QTableWidget" name="table_13"/>
+       </item>
+       <item row="0" column="4">
+        <widget class="QTableWidget" name="tableWidget"/>
        </item>
       </layout>
      </widget>

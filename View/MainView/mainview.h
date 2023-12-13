@@ -6,6 +6,7 @@
 #include <QDateTime>
 #include <QCloseEvent>
 #include <QTableWidget>
+#include <QPushButton>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainView; }
@@ -31,6 +32,8 @@ public:
     void drawTable(QTableWidget* table, Cable cable);
     void clearTable(QTableWidget* table);
  using handler= void(MainView::*) ();
+
+
 
 
 private slots:
@@ -117,6 +120,21 @@ private:
     MainPresenter *presenter;
 
     CurrentCommand currentCommand = CurrentCommand::NINE;
+
+   /* QVector<QPushButton*> buttons={
+                                   btn_1_1,
+                                   btn_2_2,
+                                   btn_3_3,
+                                   btn_4_4,
+                                   btn_5_5,
+                                   btn_6_6,
+                                   btn_7_7,
+                                   btn_8_8,
+                                   btn_9_9,
+                                   btn_10_10,
+                                   btn_11_11,
+                                   btn_12_12,
+                                   btn_13_13};*/
 
 };
 #endif // MAINVIEW_H

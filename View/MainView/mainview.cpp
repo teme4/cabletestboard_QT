@@ -1,22 +1,22 @@
 #include "mainview.h"
 #include "ui_mainview.h"
 #include <QDesktopServices>
+
 MainView::MainView(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainView)
 {
     ui->setupUi(this);
+
+
+
     init();
+
 }
 
 /*
  * Инициализация
  */
-
-
-
-
-
 
 
 void MainView::init(){
@@ -366,6 +366,13 @@ void MainView::on_clear_table_clicked()
     clearTable(ui->table_12);
     clearTable(ui->table_13);
 
+    /*for(int i=0;i<13;i++)
+    {
+      clearTable(tables.at(i));
+    }
+    }
+MainView->ta*/
+
 }
 
 void MainView::on_clear_btn_clicked()
@@ -438,3 +445,5 @@ void MainView::on_btn_13_13_clicked()
 {
      QDesktopServices::openUrl(QUrl(QDir::currentPath()+"/cables/13"));
 }
+
+

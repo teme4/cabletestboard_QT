@@ -1,4 +1,6 @@
 #include "utils.h"
+#include "View/MainView/mainview.h"
+#include "ui_mainview.h"
 
 //Функция для получения значений определенного бита в регистре
 quint8 Utils::getBitValue(quint32 data, quint8 pos){
@@ -73,7 +75,8 @@ Cable Utils::parse(QByteArray input){
     //Название кабеля
     switch(cable.number){
     case 0x01:
-        cable.name = "НККиПА - МЛИ";
+        //cable.name = "НККиПА - МЛИ";
+         //cable.name = MainView::btns;
         break;
     case 0x02:
         cable.name = "НККиПА - Плата. перекл.";
