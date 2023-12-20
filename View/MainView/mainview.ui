@@ -183,10 +183,10 @@ QTableWidget{
           <string>Настройка COM</string>
          </property>
          <layout class="QGridLayout" name="gridLayout">
-          <item row="0" column="0">
-           <widget class="QPushButton" name="open_btn">
+          <item row="0" column="1">
+           <widget class="QPushButton" name="clear_table">
             <property name="text">
-             <string>Определить и открыть порт</string>
+             <string>Скрыть состояние кабеля</string>
             </property>
            </widget>
           </item>
@@ -197,10 +197,17 @@ QTableWidget{
             </property>
            </widget>
           </item>
-          <item row="0" column="1">
-           <widget class="QPushButton" name="clear_table">
+          <item row="0" column="0">
+           <widget class="QPushButton" name="open_btn">
             <property name="text">
-             <string>Скрыть состояние кабеля</string>
+             <string>Определить и открыть порт</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QPushButton" name="close_btn">
+            <property name="text">
+             <string>Закрыть COM</string>
             </property>
            </widget>
           </item>

@@ -11,6 +11,9 @@ public:
     //Конструктор
     SerialPortSender();
 
+    //Объект SerialPort
+    QSerialPort* serial;
+
     //Запись в SerialPort
     bool writeInSerialPort(QByteArray data);
 
@@ -30,8 +33,7 @@ signals:
     void dataReceived(QByteArray data);
 
 private:
-    //Объект SerialPort
-    QSerialPort* serial;
+
 
     //Начальная настройка
     void init();

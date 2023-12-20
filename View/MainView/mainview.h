@@ -100,9 +100,7 @@ private slots:
 
     void on_pushButton_clicked();
 
-    void on_tableWidget_cellActivated(int row, int column);
-
-    void on_table_0_cellActivated(int row, int column);
+    void on_close_btn_clicked();
 
 public:
      std::array<handler,13>btns{

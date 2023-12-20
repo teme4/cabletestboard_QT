@@ -1,7 +1,4 @@
 #include "serialportsender.h"
-#include "Common/Thread/examplethreads.h"
-#include <QDebug>
-#include <iostream>
 
 QList<QString> result;
 QList<QString> manufactors;
@@ -26,18 +23,14 @@ void SerialPortSender::init(){
 
     //Присоединение сигналов к функциям
     connect(serial, &QSerialPort::readyRead, this, &SerialPortSender::serialReceive);
-     connect(serial, &QSerialPort::readyRead, this, &SerialPortSender::serialReceive);
-     //connect(serial, &QSerialPort::readyRead, this, &ExampleThreads::run);
+
 }
 
 /*
  * Прием пакетов по SerialPort
  */
 void SerialPortSender::serialReceive(){
-    if (serial->bytesAvailable()>11)
-       {
     emit dataReceived(serial->readAll());
-  }
 }
 
 /*

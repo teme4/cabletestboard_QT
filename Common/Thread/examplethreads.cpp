@@ -1,73 +1,29 @@
 #include "examplethreads.h"
-#include <qdebug.h>
+#include <QDebug>
+#include "Common/SerialPortSender/serialportsender.h"
 
-Port::Port(QObject *parent) :
-    QObject(parent)
+QSerialPort* serialp;
+//Присоединение сигналов к функциям
+//connect(serialp, &QSerialPort::readyRead, MyThread, &MyThread::uart_recive);
+
+MyThread::MyThread(QString s) : name(s)
 {
+
 }
-Port::~Port()
+
+void MyThread::uart_recive(){
+ emit dataReceived(serialp->readAll());
+
+}
+void MyThread::run()
 {
-    qDebug("By in Thread!");
-    emit finished_Port();//Сигнал о завершении работы
-}
-void Port :: process_Port(){//Выполняется при старте класса
-    qDebug("Hello World in Thread!");
-    connect(&thisPort,SIGNAL(error(QSerialPort::SerialPortError)), this, SLOT(handleError(QSerialPort::SerialPortError))); // подключаем проверку ошибок порта
-    connect(&thisPort, SIGNAL(readyRead()),this,SLOT(ReadInPort()));//подключаем   чтение с порта по сигналу readyRead()
-}
-void Port :: Write_Settings_Port(QString name, int baudrate,int DataBits,
-                         int Parity,int StopBits, int FlowControl){//заносим параметры порта в структуру данных
-    SettingsPort.name = name;
-    SettingsPort.baudRate = (QSerialPort::BaudRate) baudrate;
-    SettingsPort.dataBits = (QSerialPort::DataBits) DataBits;
-    SettingsPort.parity = (QSerialPort::Parity) Parity;
-    SettingsPort.stopBits = (QSerialPort::StopBits) StopBits;
-    SettingsPort.flowControl = (QSerialPort::FlowControl) FlowControl;
-}
-void Port :: ConnectPort(void){//процедура подключения
-    thisPort.setPortName(SettingsPort.name);
-    if (thisPort.open(QIODevice::ReadWrite)) {
-        if (thisPort.setBaudRate(SettingsPort.baudRate)
-                && thisPort.setDataBits(SettingsPort.dataBits)//DataBits
-                && thisPort.setParity(SettingsPort.parity)
-                && thisPort.setStopBits(SettingsPort.stopBits)
-                && thisPort.setFlowControl(SettingsPort.flowControl))
-        {
-            if (thisPort.isOpen()){
-                error_((SettingsPort.name+ " >> Открыт!\r").toLocal8Bit());
-            }
-        } else {
-            thisPort.close();
-            error_(thisPort.errorString().toLocal8Bit());
-          }
-    } else {
-        thisPort.close();
-        error_(thisPort.errorString().toLocal8Bit());
-    }
-}
-void Port::handleError(QSerialPort::SerialPortError error)//проверка ошибок при работе
-{
-    if ( (thisPort.isOpen()) && (error == QSerialPort::ResourceError)) {
-        error_(thisPort.errorString().toLocal8Bit());
-        DisconnectPort();
-    }
-}//
-void  Port::DisconnectPort(){//Отключаем порт
-    if(thisPort.isOpen()){
-        thisPort.close();
-        error_(SettingsPort.name.toLocal8Bit() + " >> Закрыт!\r");
-    }
-}
-void Port :: WriteToPort(QByteArray data){//Запись данных в порт
-    if(thisPort.isOpen()){
-        thisPort.write(data);
-    }
-}
-//
-void Port :: ReadInPort(){//Чтение данных из порта
-    QByteArray data;
-    data.append(thisPort.readAll());
-    outPort(data);
-    //((QString)(adr.toInt())).toLatin1().toHex()
+  //Принимаем байты в отдельном от главной программе потоке
+    /*
+    for(int i = 0; i <= 100; i++)
+  {
+    emit send(i);
+    Sleep(1000);
+    qDebug()<<i;
+  }*/
 }
 

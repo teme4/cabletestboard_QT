@@ -15,24 +15,12 @@ int main(int argc, char *argv[])
     }
 
     QApplication app(argc, argv);
-    //QCoreApplication a(argc, argv);
-
-      //ExampleThreads threadA("thread A");
-     // ExampleThreads threadB("thread B");
-   // ExampleThreads threadC("thread C");
-
-
-    //threadA.start();    // Запускаем потоки
-   // threadB.start();    // и наблюдаем их параллельную работу
-   // threadC.start();    // в выводе qDebug
 
 
 
+   MainView view;
+   new MainPresenter(&view);
+   view.show();
 
-
-  //  MainView view;
-   //new MainPresenter(&view);
-  // view.show();
-
-    return app.exec();
+   return app.exec();
 }
